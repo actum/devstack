@@ -147,7 +147,7 @@ const makeConfig = (options) => {
       if (isDevelopment) {
         plugins.push(
           new webpack.HotModuleReplacementPlugin(),
-          new webpack.NoErrorsPlugin(),
+          new webpack.NoEmitOnErrorsPlugin(),
           webpackIsomorphicToolsPlugin.development(),
         );
       } else {
