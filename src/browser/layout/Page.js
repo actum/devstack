@@ -1,9 +1,15 @@
-import React, { PropTypes } from 'react';
+// @flow
+import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 
-const Page = ({ children, title }) => (
+type Props = {|
+  children?: React$Element<any>,
+  title?: string,
+|};
+
+const Page = ({ children, title }: Props) => (
   <div className="page-container">
     <Head>
       <title>{title}</title>
@@ -76,10 +82,6 @@ const Page = ({ children, title }) => (
 
 Page.defaultProps = {
   title: 'Actum universal devstack',
-};
-
-Page.propTypes = {
-  title: PropTypes.string,
 };
 
 export default Page;

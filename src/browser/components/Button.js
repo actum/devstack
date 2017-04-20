@@ -10,22 +10,16 @@ const buttonStyles = {
   padding: '3px 10px',
 };
 
-type ButtonProps = {|
+type Props = {|
   style?: Object,
-  children?: any,
+  children?: React$Element<any>,
   onClick?: (e: SyntheticMouseEvent) => any,
 |};
 
-const Button = ({ children, onClick, style = {} }: ButtonProps) => (
+const Button = ({ children, onClick, style = {} }: Props) => (
   <button style={{ ...buttonStyles, ...style }} onClick={onClick}>
     {children}
   </button>
 );
-
-Button.propTypes = {
-  children: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func,
-  style: React.PropTypes.object,
-};
 
 export default Button;

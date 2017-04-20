@@ -10,7 +10,13 @@ const titles = {
   '/': linksMessages.home,
 };
 
-const Page = ({ component: Component, intl, pattern, ...props }) => (
+type Props = {|
+  component: any,
+  intl: intlShape,
+  pattern: string,
+|};
+
+const Page = ({ component: Component, intl, pattern, ...props }: Props) => (
   <Match
     {...props}
     pattern={pattern}
@@ -23,11 +29,5 @@ const Page = ({ component: Component, intl, pattern, ...props }) => (
     )}
   />
 );
-
-Page.propTypes = {
-  component: React.PropTypes.func.isRequired,
-  intl: intlShape.isRequired,
-  pattern: React.PropTypes.string.isRequired,
-};
 
 export default injectIntl(Page);

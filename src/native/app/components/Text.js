@@ -1,5 +1,5 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import theme from '../themes/initial';
 import { StyleSheet, Text } from 'react-native';
 
@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
 const normalizeMultilineString = message => message.replace(/ +/g, ' ').trim();
 
 class AppText extends React.Component {
-  onTextRef(text) {
+  onTextRef(text: Text) {
     this.text = text;
   }
 
-  setNativeProps(nativeProps) {
+  setNativeProps(nativeProps: any) {
     this.text.setNativeProps(nativeProps);
   }
 
@@ -40,6 +40,13 @@ class AppText extends React.Component {
     const lineHeight = round(customFontSize * theme.lineHeight);
     return [styles.text, style, { lineHeight }];
   }
+
+  props: {
+    children?: React$Element<any>,
+    style?: StyleSheet.Styles,
+  };
+
+  text: Text.text;
 
   render() {
     const { children } = this.props;
@@ -58,14 +65,5 @@ class AppText extends React.Component {
     );
   }
 }
-
-AppText.propTypes = {
-  children: PropTypes.node.isRequired,
-  style: Text.propTypes.style,
-};
-
-AppText.defaultProps = {
-  style: '',
-};
 
 export default AppText;
