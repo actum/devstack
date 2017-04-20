@@ -78,8 +78,7 @@ const InfoPage = () => (
       <a href="https://github.com/actum/devstack">more info...</a>
     </div>
     <style jsx>
-      {
-        `
+      {`
       .code {
         background-color: #908483;
         color: #fff;
@@ -91,8 +90,7 @@ const InfoPage = () => (
       .message {
         color: #908483;
       }
-    `
-      }
+    `}
     </style>
   </Page>
 );

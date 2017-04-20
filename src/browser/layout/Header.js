@@ -28,8 +28,7 @@ export default () => (
     </div>
 
     <style jsx>
-      {
-        `
+      {`
         .container {
           align-items: center;
           background-color: #ed3d25;
@@ -64,8 +63,7 @@ export default () => (
           padding: 0.5em;
           text-decoration: none;
         }
-    `
-      }
+    `}
     </style>
   </header>
 );

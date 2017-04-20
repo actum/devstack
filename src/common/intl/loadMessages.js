@@ -11,9 +11,7 @@ const descriptorsToMessages = descriptors =>
   );
 
 const loadMessages = options => {
-  const {
-    includeDefault = false,
-  } = options || {};
+  const { includeDefault = false } = options || {};
   const isDictionary = fileName =>
     path.extname(fileName) === '.js' &&
     (includeDefault || !fileName.startsWith('_'));

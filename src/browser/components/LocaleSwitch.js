@@ -11,9 +11,11 @@ type LocaleSwitchProps = {
   locales: Array<string>,
 };
 
-const LocaleSwitch = (
-  { currentLocale, handleChange, locales }: LocaleSwitchProps,
-) => (
+const LocaleSwitch = ({
+  currentLocale,
+  handleChange,
+  locales,
+}: LocaleSwitchProps) => (
   <div>
     {locales.map(locale => (
       <Button

@@ -20,7 +20,8 @@ const singletonOnClient = (create: Function) => {
 };
 
 const getReduxStore = singletonOnClient(initialState =>
-  createReduxStore(initialState));
+  createReduxStore(initialState),
+);
 
 const createApp = (Component, store, props) => (
   <Redux store={store}>
@@ -28,29 +29,28 @@ const createApp = (Component, store, props) => (
   </Redux>
 );
 
-const createGetInitialProps = Component =>
-  async ctx => {
-    const headers = ctx.req ? ctx.req.headers : {};
-    const initialState = ctx.req ? ctx.req.initialState : {};
-    const store = getReduxStore(initialState);
+const createGetInitialProps = Component => async ctx => {
+  const headers = ctx.req ? ctx.req.headers : {};
+  const initialState = ctx.req ? ctx.req.initialState : {};
+  const store = getReduxStore(initialState);
 
-    const props = {
-      url: { pathname: ctx.pathname, query: ctx.query },
-      ...(await (Component.getInitialProps
-        ? Component.getInitialProps(ctx)
-        : {})),
-    };
-
-    const state = store.getState();
-
-    return {
-      ...props,
-      headers,
-      initialState: {
-        ...state,
-      },
-    };
+  const props = {
+    url: { pathname: ctx.pathname, query: ctx.query },
+    ...(await (Component.getInitialProps
+      ? Component.getInitialProps(ctx)
+      : {})),
   };
+
+  const state = store.getState();
+
+  return {
+    ...props,
+    headers,
+    initialState: {
+      ...state,
+    },
+  };
+};
 
 // Higher order component.
 // facebook.github.io/react/docs/higher-order-components.html

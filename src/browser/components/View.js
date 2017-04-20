@@ -4,7 +4,7 @@ import React from 'react';
 type ViewProps = {
   props?: Object,
   children?: any,
-}
+};
 
 const View = ({ children, ...props }: ViewProps) => (
   <div {...props}>

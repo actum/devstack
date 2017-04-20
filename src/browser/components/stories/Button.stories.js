@@ -4,11 +4,11 @@ import Button from '../Button';
 
 storiesOf('Button', module)
   .add('link button', () => (
-    <Button onClick={linkTo('Button', 'some emojies as the text')}>Next Story</Button>
+    <Button onClick={linkTo('Button', 'some emojies as the text')}>
+      Next Story
+    </Button>
   ))
-  .add('some emojies as the text', () => (
-    <Button>😀 😎 👍 💯</Button>
-  ))
+  .add('some emojies as the text', () => <Button>😀 😎 👍 💯</Button>)
   .add('custom styles', () => {
     const style = {
       borderColor: '#ed3d25',
@@ -17,7 +17,5 @@ storiesOf('Button', module)
       fontSize: 20,
       textTransform: 'uppercase',
     };
-    return (
-      <Button style={style}>Button</Button>
-    );
+    return <Button style={style}>Button</Button>;
   });

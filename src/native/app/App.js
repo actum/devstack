@@ -11,22 +11,19 @@ import HomePage from '../home/HomePage';
 
 const App = () => (
   <Container inverse>
-    {Platform.OS === 'ios' && // Because iOS StatusBar is an overlay.
-      <StatusBar />
+    {Platform.OS === 'ios' && <StatusBar /> // Because iOS StatusBar is an overlay.
     }
-      <Page exactly pattern="/" component={HomePage} />
-      {/* Miss does't work in React Native for some reason. */}
-      {/* <Miss render={() => <Redirect to="/" />} /> */}
-      <Match
-        pattern="/"
-        render={({ location: { pathname } }) => {
-          const urls = ['/'];
-          if (urls.indexOf(pathname) !== -1) return null;
-          return (
-            <Redirect to="/" />
-          );
-        }}
-      />
+    <Page exactly pattern="/" component={HomePage} />
+    {/* Miss does't work in React Native for some reason. */}
+    {/* <Miss render={() => <Redirect to="/" />} /> */}
+    <Match
+      pattern="/"
+      render={({ location: { pathname } }) => {
+        const urls = ['/'];
+        if (urls.indexOf(pathname) !== -1) return null;
+        return <Redirect to="/" />;
+      }}
+    />
   </Container>
 );
 

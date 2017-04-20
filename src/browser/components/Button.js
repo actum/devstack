@@ -14,13 +14,10 @@ type ButtonProps = {|
   style?: Object,
   children?: any,
   onClick?: (e: SyntheticMouseEvent) => any,
-  |};
+|};
 
 const Button = ({ children, onClick, style = {} }: ButtonProps) => (
-  <button
-    style={{ ...buttonStyles, ...style }}
-    onClick={onClick}
-  >
+  <button style={{ ...buttonStyles, ...style }} onClick={onClick}>
     {children}
   </button>
 );

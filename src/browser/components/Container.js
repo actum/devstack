@@ -13,13 +13,10 @@ const styles = {
 type ContainerProps = {|
   props?: Object,
   children?: any,
-  |};
+|};
 
 const Container = ({ children, ...props }: ContainerProps) => (
-  <div
-    {...props}
-    style={styles.container}
-  >
+  <div {...props} style={styles.container}>
     {children}
   </div>
 );

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center', // align items in the flexDirection
     paddingBottom: theme.fontSize * 0.625,
-    paddingTop: (theme.fontSize * 0.625) + paddingTopOffset,
+    paddingTop: theme.fontSize * 0.625 + paddingTopOffset,
   },
   title: {
     color: theme.inverseTextColor,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 
 type HeaderProps = {|
   title: string,
-  |};
+|};
 
 const Header = ({ title }: HeaderProps) => (
   <View style={styles.header}>

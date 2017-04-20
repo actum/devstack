@@ -17,8 +17,7 @@ const Page = ({ component: Component, intl, pattern, ...props }) => (
     render={renderProps => (
       <Container>
         {titles[pattern] &&
-          <Header title={intl.formatMessage(titles[pattern])} />
-        }
+          <Header title={intl.formatMessage(titles[pattern])} />}
         <Component {...renderProps} />
       </Container>
     )}

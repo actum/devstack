@@ -9,7 +9,7 @@
     "jest": "jest",
     "jest:watch": "jest --watch",
     "postinstall": "gulp native",
-    "prettier": "prettier --bracket-spacing --single-quote --tab-width 2 --trailing-comma es5 --parser babylon --print-width 80  --write \"{{components,lib,pages,themes},__{tests,mocks}__}/**/*.js\"",
+    "prettier": "prettier --bracket-spacing --single-quote --tab-width 2 --trailing-comma all --parser babylon --print-width 80 --semi true  --write \"{src,__{tests,mocks}__}/**/*.js\"",
     "start": "NODE_ENV=production node src/server.js",
     "storybook-web": "start-storybook -p 9001 -c .storybook/web",
     "storybook-native": "start-storybook -p 9002 -c .storybook/native",

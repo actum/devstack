@@ -4,24 +4,23 @@ import { applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 
 // Redux logger for Node.js.
-const nodeLogger = () =>
-  next =>
-    (action: Action) => {
-      const { type, ...props } = action;
-      const propsAsShortString = JSON.stringify(props).slice(0, 60);
-      // eslint-disable-next-line
-      console.log(`action ${type}, ${propsAsShortString}...`);
-      return next(action);
-    };
+const nodeLogger = () => next => (action: Action) => {
+  const { type, ...props } = action;
+  const propsAsShortString = JSON.stringify(props).slice(0, 60);
+  // eslint-disable-next-line
+  console.log(`action ${type}, ${propsAsShortString}...`);
+  return next(action);
+};
 
-const createDiMiddleware = ({ dispatch, getState }): ThunkAction =>
-  next =>
-    async action =>
-      next(
-        typeof action === 'function'
-          ? await action({ dispatch, getState })
-          : action,
-      );
+const createDiMiddleware = ({
+  dispatch,
+  getState,
+}): ThunkAction => next => async action =>
+  next(
+    typeof action === 'function'
+      ? await action({ dispatch, getState })
+      : action,
+  );
 
 const createReduxMiddleware = () => {
   const middleware = [createDiMiddleware];

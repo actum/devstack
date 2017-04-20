@@ -40,18 +40,15 @@ const Page = ({ children, title }) => (
     <Footer />
 
     <style jsx global>
-      {
-        `
+      {`
         body {
           margin: 0;
         }
-        `
-      }
+        `}
     </style>
 
     <style jsx>
-      {
-        `
+      {`
         .page-container {
           display: flex;
           flex-direction: column;
@@ -72,8 +69,7 @@ const Page = ({ children, title }) => (
         main {
           flex: 1;
         }
-    `
-      }
+    `}
     </style>
   </div>
 );

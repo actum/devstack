@@ -33,8 +33,7 @@ const Homepage = () => (
       <FormattedTime value={Date.now()} />
     </p>
     <style jsx>
-      {
-        `
+      {`
       .description {
         font-size: 0.8em;
       }
@@ -46,8 +45,7 @@ const Homepage = () => (
         color: #908483;
         text-transform: uppercase;
       }
-    `
-      }
+    `}
     </style>
   </Page>
 );

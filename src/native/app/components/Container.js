@@ -14,10 +14,7 @@ const Container = ({ inverse, style, ...props }: any) => {
     ? theme.inverseBackgroundColor
     : theme.backgroundColor;
   return (
-    <View
-      {...props}
-      style={[styles.container, { backgroundColor }, style]}
-    />
+    <View {...props} style={[styles.container, { backgroundColor }, style]} />
   );
 };
 
