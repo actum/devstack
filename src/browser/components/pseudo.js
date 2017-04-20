@@ -5,8 +5,7 @@ type State = {
   hover: boolean,
 };
 
-const pseudo = (WrappedComponent: Function) => class Pseudo
-  extends React.Component {
+const pseudo = (Wrapped: Function) => class Pseudo extends React.Component {
   state: State = {
     hover: false,
   };
@@ -21,7 +20,7 @@ const pseudo = (WrappedComponent: Function) => class Pseudo
 
   render() {
     return (
-      <WrappedComponent
+      <Wrapped
         {...this.props}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}

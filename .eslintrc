@@ -24,6 +24,7 @@
     "no-class-assign": 0, // Class assign is used for higher order components.
     "no-confusing-arrow": 0, // This rule is super confusing.
     "no-duplicate-imports": 0, // github.com/babel/eslint-plugin-babel/issues/59#issuecomment-230118848
+    "no-mixed-operators": 0, // prettier removing unnecessary brackets
     "no-nested-ternary": 0, // It's nice for JSX.
     "no-param-reassign": 0, // We love param reassignment. Naming is hard.
     "no-shadow": 0, // Shadowing is a nice language feature. Naming is hard.

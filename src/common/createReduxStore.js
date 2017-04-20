@@ -1,3 +1,4 @@
+// @flow
 import type { State } from './types';
 import createReduxMiddleware from './createReduxMiddleware';
 import createReduxReducer from './createReduxReducer';
