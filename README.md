@@ -32,6 +32,7 @@
 - `gulp messages-check` check missing and unused translations
 - `gulp messages-clear` remove unused translations
 - `npm run build-size-check` display info about latest build
+- `yarn run devtools` start standalone React devtools for native apps
 
 ## E2E Tasks
 - `gulp test-e2e [-p] -d [ios|android|browser|i|a|b] [-s ${folderName}]` start E2E tests for selected platform, possibly in production mode
