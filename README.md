@@ -1,6 +1,6 @@
 > Starter kit for universal full–fledged React apps. One stack for browser, mobile, server.
 
-> Based on [Este.js](https://github.com/este/este)
+> Originally based on [Este.js](https://github.com/este/este)
 
 ## Prerequisites
 
@@ -25,14 +25,14 @@
 
 ## Dev Tasks
 
-- `gulp eslint` eslint
 - `gulp eslint --fix` fix fixable eslint issues
 - `gulp messages-export` export messages for translators (with `MISSING` prefix when untranslated)
-- `gulp messages-extract` extract messages for translation
 - `gulp messages-check` check missing and unused translations
-- `gulp messages-clear` remove unused translations
+- `gulp clean-ios`/`gulp clean-android` clean ios/android build
 - `npm run build-size-check` display info about latest build
 - `yarn run devtools` start standalone React devtools for native apps
+- `rm -fr $TMPDIR/react-*` reset native packager cache
+- `watchman watch-del-all` clear watchman watches
 
 ## E2E Tasks
 - `gulp test-e2e [-p] -d [ios|android|browser|i|a|b] [-s ${folderName}]` start E2E tests for selected platform, possibly in production mode
@@ -77,7 +77,3 @@ Almost everything in Next.js is configurable, but the folders structure not yet.
 - merge your project's `master` to `devstack-update`
 - solve eventual conflicts
 - create PR from `devstack-update` to your `master`
-
-## Links
-
-- [Este wiki](https://github.com/este/este/wiki)
