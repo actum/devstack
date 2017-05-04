@@ -17,14 +17,12 @@ const reducer = (
   if (!action) return state;
 
   switch (action.type) {
-
     case 'SET_CURRENT_LOCALE': {
       return { ...state, currentLocale: action.payload.locale };
     }
 
     default:
       return state;
-
   }
 };
 

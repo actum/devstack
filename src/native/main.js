@@ -2,10 +2,9 @@
 import React from 'react';
 import ReactNativeI18n from 'react-native-i18n';
 import Root from './app/Root';
-import configureStore from '../common/configureStore';
+import createReduxStore from '../common/createReduxStore';
 import initialState from './initialState';
-import uuid from 'react-native-uuid';
-import { AppRegistry, AsyncStorage, Platform } from 'react-native';
+import { AppRegistry } from 'react-native';
 
 const getDefaultDeviceLocale = () => {
   const { defaultLocale, locales } = initialState.intl;
@@ -14,26 +13,16 @@ const getDefaultDeviceLocale = () => {
   return isSupported ? deviceLocale : defaultLocale;
 };
 
-const createNativeInitialState = () => ({
+const nativeInitialState = {
   ...initialState,
-  device: {
-    ...initialState.device,
-    isReactNative: true,
-    platform: Platform.OS,
-  },
   intl: {
     ...initialState.intl,
     currentLocale: getDefaultDeviceLocale(),
   },
-});
+};
 
-const store = configureStore({
-  initialState: createNativeInitialState(),
-  platformDeps: { storageEngine: AsyncStorage, uuid },
-});
+const store = createReduxStore(nativeInitialState);
 
-const Este = () => (
-  <Root store={store} />
-);
+const Este = () => <Root store={store} />;
 
 AppRegistry.registerComponent('Este', () => Este);

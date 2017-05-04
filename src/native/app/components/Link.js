@@ -1,16 +1,33 @@
 // @flow weak
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { Match } from 'react-router';
 import { Text } from './';
 
-const Link = ({
-  activeStyle,
-  children,
-  exactly,
-  onPress,
-  style,
-  to,
-}, { router }) => (
+type Context = {|
+  router: Object,
+|};
+
+type Props = {|
+  activeStyle?: StyleSheet.Styles,
+  children?: React$Element<any>,
+  exactly?: boolean,
+  onPress?: null | void,
+  style?: StyleSheet.Styles,
+  to: string | Object,
+|};
+
+const Link = (
+  {
+    activeStyle = {},
+    children,
+    exactly = false,
+    onPress = null,
+    style = {},
+    to,
+  }: Props,
+  { router }: Context,
+) => (
   <Match exactly={exactly} pattern={to}>
     {({ matched }) => (
       <Text
@@ -26,21 +43,5 @@ const Link = ({
     )}
   </Match>
 );
-
-Link.contextTypes = {
-  router: React.PropTypes.object,
-};
-
-Link.propTypes = {
-  activeStyle: React.PropTypes.any,
-  children: React.PropTypes.node.isRequired,
-  exactly: React.PropTypes.bool,
-  onPress: React.PropTypes.func,
-  style: React.PropTypes.any,
-  to: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-  ]),
-};
 
 export default Link;

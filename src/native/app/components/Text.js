@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import theme from '../themes/initial';
 import { StyleSheet, Text } from 'react-native';
@@ -6,7 +7,8 @@ import { StyleSheet, Text } from 'react-native';
 const round = value => Math.round(value);
 
 const styles = StyleSheet.create({
-  text: { // eslint-disable-line react-native/no-unused-styles
+  text: {
+    // eslint-disable-line react-native/no-unused-styles
     color: theme.textColor,
     fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
@@ -18,17 +20,11 @@ const styles = StyleSheet.create({
 const normalizeMultilineString = message => message.replace(/ +/g, ' ').trim();
 
 class AppText extends React.Component {
-
-  static propTypes = {
-    children: React.PropTypes.node,
-    style: Text.propTypes.style,
-  };
-
-  onTextRef(text) {
+  onTextRef(text: Text) {
     this.text = text;
   }
 
-  setNativeProps(nativeProps) {
+  setNativeProps(nativeProps: any) {
     this.text.setNativeProps(nativeProps);
   }
 
@@ -45,6 +41,13 @@ class AppText extends React.Component {
     return [styles.text, style, { lineHeight }];
   }
 
+  props: {
+    children?: React$Element<any>,
+    style?: StyleSheet.Styles,
+  };
+
+  text: Text.text;
+
   render() {
     const { children } = this.props;
     const textStyle = this.getTextStyleWithMaybeComputedLineHeight();
@@ -57,12 +60,10 @@ class AppText extends React.Component {
       >
         {typeof children === 'string'
           ? normalizeMultilineString(children)
-          : children
-        }
+          : children}
       </Text>
     );
   }
-
 }
 
 export default AppText;

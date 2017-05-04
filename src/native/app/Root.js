@@ -11,7 +11,6 @@ type Props = {
 // Must be the ES6 class to ensure hot reload works for stateless components.
 /* eslint-disable react/prefer-stateless-function */
 class Root extends React.Component {
-
   props: Props;
 
   render() {
@@ -24,7 +23,6 @@ class Root extends React.Component {
       </Redux>
     );
   }
-
 }
 
 export default Root;
