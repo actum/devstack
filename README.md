@@ -29,7 +29,7 @@
 - `gulp messages-export` export messages for translators (with `MISSING` prefix when untranslated)
 - `gulp messages-check` check missing and unused translations
 - `gulp clean-ios`/`gulp clean-android` clean ios/android build
-- `npm run build-size-check` display info about latest build
+- `yarn run build-size-check` display info about latest build
 - `yarn run devtools` start standalone React devtools for native apps
 - `rm -fr $TMPDIR/react-*` reset native packager cache
 - `watchman watch-del-all` clear watchman watches

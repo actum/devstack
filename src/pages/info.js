@@ -42,36 +42,24 @@ const InfoPage = () => (
             <span> run Android app in development mode</span>
           </li>
           <li className="list-item">
-            <span className="code">gulp jest</span>
-            <span> run jest tests</span>
+            <span className="code">gulp eslint  --fix</span>
+            <span>fix fixable eslint issues</span>
           </li>
           <li className="list-item">
-            <span className="code">gulp jest-watch</span>
-            <span> continuous test running for TDD</span>
-          </li>
-          <li className="list-item">
-            <span className="code">gulp eslint</span>
-            <span> eslint</span>
-          </li>
-          <li className="list-item">
-            <span className="code">gulp messages-extract</span>
-            <span> extract messages for translation</span>
+            <span className="code">gulp messages-export</span>
+            <span>export messages for translators (with `MISSING` prefix when untranslated)</span>
           </li>
           <li className="list-item">
             <span className="code">gulp messages-check</span>
             <span> check missing and unused translations</span>
           </li>
           <li className="list-item">
-            <span className="code">gulp messages-clear</span>
-            <span> remove unused translations</span>
-          </li>
-          <li className="list-item">
-            <span className="code">gulp favicon</span>
-            <span>create universal favicon</span>
-          </li>
-          <li className="list-item">
-            <span className="code">npm run build-size-check</span>
+            <span className="code">yarn run build-size-check</span>
             <span>build-size-check display info about latest build</span>
+          </li>
+          <li className="list-item">
+            <span className="code">yarn run devtools</span>
+            <span>start standalone React devtools for native apps</span>
           </li>
         </ul>
       </article>
